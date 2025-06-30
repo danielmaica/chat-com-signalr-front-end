@@ -1,59 +1,67 @@
-# SignalrChatWeb
+# SignalR Chat Web
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
+Um front-end de chat em tempo real desenvolvido em Angular, conectado via SignalR a um servidor .NET.
 
-## Development server
+## Descrição
 
-To start a local development server, run:
+Este projeto é uma aplicação web de chat em tempo real, onde múltiplos usuários podem trocar mensagens instantaneamente. O front-end é construído com Angular e utiliza o SignalR para comunicação em tempo real com um backend .NET.
+
+## Tecnologias Utilizadas
+- [Angular](https://angular.io/) 19+
+- [Angular Material](https://material.angular.io/)
+- [SignalR](https://learn.microsoft.com/aspnet/core/signalr/introduction?view=aspnetcore-7.0)
+- [TypeScript](https://www.typescriptlang.org/)
+- [.NET SignalR Backend](https://learn.microsoft.com/aspnet/core/signalr/introduction?view=aspnetcore-7.0) (não incluso neste repositório)
+
+## Pré-requisitos
+- Node.js 18+
+- Angular CLI
+- Backend .NET com SignalR rodando (ajuste a URL do hub em `home.component.ts` se necessário)
+
+## Instalação
+
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/signalr-chat-web.git
+   cd signalr-chat-web
+   ```
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+3. Certifique-se de que o backend .NET SignalR está rodando e acessível na URL configurada (por padrão: `https://localhost:44300/chat`).
+
+## Executando o Projeto
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Acesse [http://localhost:4200](http://localhost:4200) no seu navegador.
 
-## Code scaffolding
+## Configuração do Backend
+- O front-end espera que o backend SignalR esteja disponível em `https://localhost:44300/chat`.
+- Se necessário, altere a URL do hub em `src/app/views/home/home.component.ts`:
+  ```typescript
+  .withUrl('https://localhost:44300/chat')
+  ```
+- O backend deve implementar os métodos SignalR para broadcast de mensagens e notificação de novos usuários.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Funcionalidades
+- Escolha de nome ao entrar no chat
+- Envio e recebimento de mensagens em tempo real
+- Notificação de entrada de novos usuários
+- Interface responsiva e moderna com Angular Material
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+## Testes
+Para rodar os testes unitários:
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## Licença
+Este projeto está sob a licença MIT.
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+> Desenvolvido para fins de estudo e demonstração de integração Angular + SignalR + .NET.

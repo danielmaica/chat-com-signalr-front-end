@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Bem-vindo!</h1>
+<div mat-dialog-content>
+  <p>Por favor, informe seu nome para participar do chat.</p>
+  <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="name" placeholder="Digite seu nome" required />
+  </mat-form-field>
+  <div mat-dialog-actions>
+    <button
+      mat-button
+      [mat-dialog-close]="name"
+      cdkFocusInitial
+      [disabled]="!name"
+    >
+      Ok
+    </button>
+  </div>
+</div>

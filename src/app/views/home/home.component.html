@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="header">
+    <mat-toolbar color="primary">
+      <span>Chat da Comunidade</span>
+    </mat-toolbar>
+  </div>
+
+  <div class="messages">
+    <div
+      *ngFor="let message of messages"
+      [ngClass]="{
+        'own-message': message.userName === userName,
+        'other-message': message.userName !== userName
+      }"
+    >
+      <div class="userName">
+        <b>{{ message.userName }}</b>
+      </div>
+      <div class="text">
+        {{ message.text }}
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <mat-form-field class="input" appearance="fill">
+      <mat-label>Escreva sua mensagem</mat-label>
+      <input
+        (keyup.enter)="sendMessage()"
+        matInput
+        [formControl]="messageControl"
+        placeholder="Escreva sua mensagem aqui"
+      />
+    </mat-form-field>
+    <button
+      (click)="sendMessage()"
+      (keyup.enter)="sendMessage()"
+      type="submit"
+      color="primary"
+      mat-mini-fab
+      aria-label="Enviar"
+    >
+      <mat-icon>send</mat-icon>
+    </button>
+  </div>
+</div>

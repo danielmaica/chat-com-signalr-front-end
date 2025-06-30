@@ -1,0 +1,51 @@
+h1[mat-dialog-title] {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #7c4dff;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0 0 0;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-top: 12px;
+}
+
+input[matInput] {
+  background: #f7f7fa;
+  border-radius: 6px;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 16px;
+}
+
+button[mat-button] {
+  background: linear-gradient(135deg, #ab47bc 0%, #7c4dff 100%);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 6px 18px;
+  box-shadow: 0 2px 8px rgba(124, 77, 255, 0.08);
+  transition: background 0.2s;
+}
+button[mat-button]:hover:not([disabled]) {
+  background: linear-gradient(135deg, #7c4dff 0%, #ab47bc 100%);
+}
+
+p {
+  color: #555;
+  font-size: 1rem;
+  margin: 0;
+  text-align: center;
+}
